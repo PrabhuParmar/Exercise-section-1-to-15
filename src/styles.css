@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+    --primary-gray: #c0c0c0;
+    --primary-black: black;
+    --bright-gray: #EEEEEE;
+    --dark-blue: #25292e;
+    --primary-blue: #464d55;
+    --primary-white: white;
+    --primary-orange: orange;
+    --primary-red: red;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--primary-gray);
+}
+
+/* btn css start  */
+.active-btn {
+    background-image: linear-gradient(var(--primary-blue), var(--dark-blue));
+    transform: translate3d(0, 0, 0);
+    transition: all 150ms;
+    color: var(--primary-white) !important;
+}
+
+.active-btn:hover {
+    box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;
+    opacity: .85;
+}
+
+.active-btn:active {
+    outline: 0;
+
+}
+
+.active-btn:focus {
+    box-shadow: rgba(0, 0, 0, .5) 0 0 0 3px;
+
+}
+
+/* Empty Message css */
+
+.empty-messgae {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+}

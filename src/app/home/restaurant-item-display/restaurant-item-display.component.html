@@ -1,0 +1,38 @@
+<!-- display restaurant Item start  -->
+<div class="restaurant-item-display-section">
+    <div class="row g-0 restaurant-item-container d-flex flex-wrap">
+        <div class="col m-2 d-flex justify-content-center" *ngFor="let item of restaurantItemListData">
+            <!-- card Display  -->
+            <div class="card-item-section ">
+                <div class="card-details-section d-flex">
+                    <div class=" ">
+                        <img src="{{item.imageUrl}}" class="item-img" alt="...">
+                    </div>
+                    <div class="item-details d-flex flex-column">
+                        <div class="card-body me-0  p-2">
+                            <h5 class="card-title m-0 my-2">
+                                <p class="item-name m-0" appIsEllipsisActiveDirective placement="top" #setTooltip
+                                    ngbTooltip="{{item.itemName}}" tooltipClass="my-custom-class"
+                                    [disableTooltip]="setTooltip.classList.contains('set-tooltip') ? false : true">
+                                    {{item.itemName}}
+                                </p>
+                            </h5>
+                            <p class="card-text m-0 my-2"> <span class="item-title">Category : </span> {{item.category}}
+                            </p>
+                            <p class="card-text m-0 my-2"> <span class="item-title">Price : </span> {{item.price}} </p>
+                            <button class="btn add-to-menu-btn restaurant-add-btn active-btn"
+                                (click)="itemAddToMenu(item)">Add To
+                                Menu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- display restaurant Item End  -->
+
+<!-- restaurant item List Empty -->
+<div *ngIf="restaurantItemListData.length==0">
+    <h1 class="empty-messgae">Item list Empty !</h1>
+</div>

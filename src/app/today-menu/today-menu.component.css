@@ -1,0 +1,54 @@
+/* Today menu menu section css start  */
+.today-menu-section .restaurant-item-container .categories-name {
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.restaurant-item-display-section .restaurant-item-container .active-btn:hover {
+    background-image: linear-gradient(var(--primary-blue), var(--dark-blue));
+    color: var(--primary-white) !important;
+    box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;
+    opacity: .85;
+}
+
+@media screen and (min-width:992.98px) {
+    .restaurant-item-display-section .restaurant-item-container .item-img {
+        height: 226px;
+        width: 169px;
+    }
+}
+
+@media screen and (max-width:540px) {
+    .today-menu-section .restaurant-item-container .menu-card-data {
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992.98px) {
+    .restaurant-item-display-section .restaurant-item-container .card-item-section {
+        max-width: 191px;
+        min-width: 306px;
+    }
+
+    .restaurant-item-display-section .restaurant-item-container .card-details-section {
+        height: 479px;
+    }
+
+    .restaurant-item-display-section .restaurant-item-container .item-name {
+        width: 279px;
+    }
+
+    .today-menu-section .restaurant-item-container .menu-card-data {
+        justify-content: space-between;
+    }
+
+}
+
+@media screen and (min-width:1201px) and (max-width:1600px) {
+    .restaurant-item-display-section .restaurant-item-container .item-name {
+        width: 211px;
+    }
+}
+
+/* Today menu menu section css End  */

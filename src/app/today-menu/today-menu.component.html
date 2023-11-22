@@ -1,0 +1,54 @@
+<div class="container today-menu-section">
+    <!-- display Today Item start  -->
+    <div class="restaurant-item-display-section">
+        <div class="restaurant-item-container">
+            <div *ngFor="let menuList of groupByCategory" class="m-2">
+                <h1 class="categories-name p-2">{{menuList.category}}</h1>
+                <div class="menu-card-data d-flex flex-wrap">
+                    <div class="m-2" *ngFor="let item of menuList.products  let itemData">
+                        <div class="card-item-section ">
+                            <div class=" card-details-section d-flex">
+                                <div class="">
+                                    <img src="{{item.imageUrl}}" class="item-img">
+                                </div>
+                                <div class="item-details d-flex flex-column">
+                                    <div class="card-body me-0 p-2">
+                                        <h5 class="card-title m-0 my-2 d-flex flex-column">
+                                            <p class="item-name m-0" appIsEllipsisActiveDirective placement="top"
+                                                #setTooltip ngbTooltip="{{item.itemName}}"
+                                                tooltipClass="my-custom-class"
+                                                [disableTooltip]="setTooltip.classList.contains('set-tooltip') ? false : true"
+                                                appSpecialItem [categoryStatus]="item.special">
+                                                {{item.itemName}}
+                                            </p>
+                                            <span *ngIf="item.special === true" class="special"> (Special)
+                                            </span>
+                                        </h5>
+                                        <p class="card-text m-0 my-2"> <span class="item-title">Category : </span>
+                                            {{item.category}}
+                                        </p>
+                                        <p class="card-text m-0 my-2"> <span class="item-title">Price : </span>
+                                            {{item.price}}
+                                        </p>
+                                        <p class="card-text m-0 my-2"> <span class="item-title">Quantity: </span>
+                                            {{item.count}}
+                                        </p>
+                                        <button class="btn add-to-menu-btn restaurant-btn active-btn"
+                                            (click)="removeItem(itemData)">remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- display today Item End  -->
+</div>
+<!-- Today Menu list Empty  -->
+<div *ngIf="groupByCategory.length==0">
+    <h1 class="empty-messgae">No Record Found</h1>
+</div>

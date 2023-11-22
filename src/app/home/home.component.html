@@ -1,0 +1,12 @@
+<!-- Home html Start  -->
+<div class="mt-5">
+    <div class="row g-0">
+        <div class="col-12 col-md-12 col-lg-6 my-5">
+            <app-add-item-form (restaurantItem)="restaurantItemData($event)"></app-add-item-form>
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 my-5">
+            <app-restaurant-item-display [restaurantItemListData]="restaurantItemList"></app-restaurant-item-display>
+        </div>
+    </div>
+</div>
+<!-- Home html End  -->

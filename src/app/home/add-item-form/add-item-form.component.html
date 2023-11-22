@@ -1,0 +1,80 @@
+<!-- Add Item form Start  -->
+<div class="form-main-section ">
+    <div class="row g-0">
+        <div class=" d-flex justify-content-center form-container">
+            <form class="form-section" [formGroup]="restaurantItemForm">
+                <div class="d-flex justify-content-center">
+                    <h3 class="form-title">Add Item</h3>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Name *</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="itemName">
+                    <div id="emailHelp" class="form-text form-error"
+                        *ngIf="!restaurantItemForm.get('itemName')?.valid && restaurantItemForm.get('itemName')?.touched ">
+                        <span
+                            *ngIf="restaurantItemForm.get('itemName')?.errors && restaurantItemForm.get('itemName')?.hasError('required')">
+                            ItemName Is Required
+                        </span>
+                        <span
+                            *ngIf="restaurantItemForm.get('itemName')?.errors && restaurantItemForm.get('itemName')?.hasError('spaceNotAllowedStatus')">
+                            space Not Allowed
+                        </span>
+                        <span
+                            *ngIf="restaurantItemForm.get('itemName')?.errors && restaurantItemForm.get('itemName')?.hasError('pattern')">
+                            Only Allow Characters
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"> Image Url *</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="imageUrl">
+                    <div id="emailHelp" class="form-text form-error"
+                        *ngIf="!restaurantItemForm.get('imageUrl')?.valid && restaurantItemForm.get('imageUrl')?.touched ">
+                        <span
+                            *ngIf="restaurantItemForm.get('imageUrl')?.errors && restaurantItemForm.get('imageUrl')?.hasError('required')">
+                            ImageUrl Is Required
+                        </span>
+                        <span
+                            *ngIf="restaurantItemForm.get('imageUrl')?.errors && restaurantItemForm.get('imageUrl')?.hasError('spaceNotAllowedStatus')">
+                            space Not Allowed
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"> Category *</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="category">
+                        <option value="south indian">south indian</option>
+                        <option value="gujarati">gujarati </option>
+                        <option value="punjabi"> punjabi </option>
+                        <option value="mexican"> mexican </option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"> Price *</label>
+                    <input type="number" class="form-control" aria-describedby="emailHelp" formControlName="price">
+                    <div id="emailHelp" class="form-text form-error"
+                        *ngIf="!restaurantItemForm.get('price')?.valid && restaurantItemForm.get('price')?.touched ">
+                        <span
+                            *ngIf="restaurantItemForm.get('price')?.errors && restaurantItemForm.get('price')?.hasError('required')">
+                            Price Is Required
+                        </span>
+                        <span
+                            *ngIf="restaurantItemForm.get('price')?.errors && restaurantItemForm.get('price')?.hasError('tooLittleBudget')">
+                            Enter Valid Price
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" formControlName="special">
+                    <label class="form-check-label">Special</label>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn add-item-btn active-btn" (click)="onAddItem()"
+                        [disabled]="!restaurantItemForm.valid">Add Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Add item Form End -->
