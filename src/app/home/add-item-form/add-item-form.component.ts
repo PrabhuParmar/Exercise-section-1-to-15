@@ -13,7 +13,9 @@ export class AddItemFormComponent {
   spaceNotAllowed = (control: AbstractControl) => {
     return control.value !== null && control.value.indexOf(' ') !== -1 ? { spaceNotAllowedStatus: true } : null;
   };
-
+  trimValidation = (control: AbstractControl) => {
+    return control.value !== null && control.value.trim() == '' ? { checkNameValue: true } : null;
+  }
   // price Validation 
   setPriceLimit = (control: AbstractControl) => {
     return control.value <= 0 && control.value !== null ? { tooLittleBudget: true } : null;
@@ -21,7 +23,7 @@ export class AddItemFormComponent {
 
   // set restaurantItemForm 
   restaurantItemForm: FormGroup = new FormGroup({
-    itemName: new FormControl('', [Validators.required, this.spaceNotAllowed, Validators.pattern('[a-zA-Z ]*')]),
+    itemName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*'), this.trimValidation]),
     imageUrl: new FormControl('', [Validators.required, this.spaceNotAllowed]),
     category: new FormControl('south indian', []),
     price: new FormControl(null, [Validators.required, this.setPriceLimit]),

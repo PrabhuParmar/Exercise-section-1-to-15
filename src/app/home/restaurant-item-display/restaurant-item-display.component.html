@@ -11,8 +11,8 @@
                     <div class="item-details d-flex flex-column">
                         <div class="card-body me-0  p-2">
                             <h5 class="card-title m-0 my-2">
-                                <p class="item-name m-0" appIsEllipsisActiveDirective placement="top" #setTooltip
-                                    ngbTooltip="{{item.itemName}}" tooltipClass="my-custom-class"
+                                <p class="item-name m-0" appIsEllipsisActiveDirective [placement]="['top','left']"
+                                    #setTooltip ngbTooltip="{{item.itemName}}" tooltipClass="my-custom-class"
                                     [disableTooltip]="setTooltip.classList.contains('set-tooltip') ? false : true">
                                     {{item.itemName}}
                                 </p>
@@ -34,5 +34,5 @@
 
 <!-- restaurant item List Empty -->
 <div *ngIf="restaurantItemListData.length==0">
-    <h1 class="empty-messgae">Item list Empty !</h1>
+    <h1 class="empty-message d-flex justify-content-center align-items-center">Item list Empty !</h1>
 </div>

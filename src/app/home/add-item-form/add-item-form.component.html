@@ -1,47 +1,44 @@
 <!-- Add Item form Start  -->
 <div class="form-main-section ">
     <div class="row g-0">
-        <div class=" d-flex justify-content-center form-container">
+        <div class=" d-flex justify-content-center align-items-center form-container">
             <form class="form-section" [formGroup]="restaurantItemForm">
                 <div class="d-flex justify-content-center">
                     <h3 class="form-title">Add Item</h3>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Name *</label>
+                    <label class="form-label">Name <span class="form-error">*</span></label>
                     <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="itemName">
                     <div id="emailHelp" class="form-text form-error"
                         *ngIf="!restaurantItemForm.get('itemName')?.valid && restaurantItemForm.get('itemName')?.touched ">
-                        <span
-                            *ngIf="restaurantItemForm.get('itemName')?.errors && restaurantItemForm.get('itemName')?.hasError('required')">
-                            ItemName Is Required
-                        </span>
-                        <span
-                            *ngIf="restaurantItemForm.get('itemName')?.errors && restaurantItemForm.get('itemName')?.hasError('spaceNotAllowedStatus')">
-                            space Not Allowed
+                        <span *ngIf="restaurantItemForm.get('itemName')?.errors 
+                            && restaurantItemForm.get('itemName')?.hasError('required') 
+                            || restaurantItemForm.get('itemName')?.hasError('checkNameValue')">
+                            Item name is required!
                         </span>
                         <span
                             *ngIf="restaurantItemForm.get('itemName')?.errors && restaurantItemForm.get('itemName')?.hasError('pattern')">
-                            Only Allow Characters
+                            Please enter valid name, Only Characters allowed!
                         </span>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label"> Image Url *</label>
+                    <label class="form-label"> Image Url <span class="form-error">*</span></label>
                     <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="imageUrl">
                     <div id="emailHelp" class="form-text form-error"
                         *ngIf="!restaurantItemForm.get('imageUrl')?.valid && restaurantItemForm.get('imageUrl')?.touched ">
                         <span
                             *ngIf="restaurantItemForm.get('imageUrl')?.errors && restaurantItemForm.get('imageUrl')?.hasError('required')">
-                            ImageUrl Is Required
+                            Image url is required!
                         </span>
                         <span
                             *ngIf="restaurantItemForm.get('imageUrl')?.errors && restaurantItemForm.get('imageUrl')?.hasError('spaceNotAllowedStatus')">
-                            space Not Allowed
+                            Please enter valid image url, space not allowed!
                         </span>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label"> Category *</label>
+                    <label class="form-label"> Category <span class="form-error">*</span></label>
                     <select class="form-select" aria-label="Default select example" formControlName="category">
                         <option value="south indian">south indian</option>
                         <option value="gujarati">gujarati </option>
@@ -50,17 +47,17 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label"> Price *</label>
+                    <label class="form-label"> Price <span class="form-error">*</span></label>
                     <input type="number" class="form-control" aria-describedby="emailHelp" formControlName="price">
                     <div id="emailHelp" class="form-text form-error"
                         *ngIf="!restaurantItemForm.get('price')?.valid && restaurantItemForm.get('price')?.touched ">
                         <span
                             *ngIf="restaurantItemForm.get('price')?.errors && restaurantItemForm.get('price')?.hasError('required')">
-                            Price Is Required
+                            Price is required!
                         </span>
                         <span
                             *ngIf="restaurantItemForm.get('price')?.errors && restaurantItemForm.get('price')?.hasError('tooLittleBudget')">
-                            Enter Valid Price
+                            Please enter valid Price, Price must be greater than 0!
                         </span>
                     </div>
                 </div>

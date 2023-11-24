@@ -31,9 +31,10 @@
 
 }
 
-.empty-messgae {
+.empty-message {
     color: var(--primary-blue);
     font-weight: 500;
+    height: 68vh;
 }
 
 
@@ -45,11 +46,8 @@
     color: var(--dark-blue) !important;
 }
 
-.empty-messgae {
-    display: flex;
-    justify-content: center;
-    height: 80vh;
-    align-items: center;
+.restaurant-item-display-section .restaurant-item-container .set-tooltip {
+    cursor: pointer;
 }
 
 @media screen and (max-width:360.98px) {
@@ -119,12 +117,15 @@
 
 @media screen and (min-width:1201px) and (max-width:1600px) {
     .restaurant-item-display-section .restaurant-item-container .card-item-section {
-        max-width: 400px;
-        min-width: 325px;
+        /* max-width: 400px;
+        min-width: 325px; */
+        max-width: 336px;
+        min-width: 295px;
     }
 
     .restaurant-item-display-section .restaurant-item-container .item-name {
-        width: 222px;
+        /* width: 222px; */
+        width: 158px;
     }
 
     .restaurant-item-display-section .restaurant-item-container .item-details {
@@ -139,7 +140,7 @@
     }
 
     .restaurant-item-display-section .restaurant-item-container .item-name {
-        width: 219px;
+        width: 214px;
     }
 }
 

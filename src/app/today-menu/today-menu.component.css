@@ -12,6 +12,11 @@
     opacity: .85;
 }
 
+.empty-message {
+    height: 80vh;
+}
+
+
 @media screen and (min-width:992.98px) {
     .restaurant-item-display-section .restaurant-item-container .item-img {
         height: 226px;
@@ -47,7 +52,18 @@
 
 @media screen and (min-width:1201px) and (max-width:1600px) {
     .restaurant-item-display-section .restaurant-item-container .item-name {
-        width: 211px;
+        /* width: 211px; */
+        /* width: 147px; */
+        width: 203px;
+
+    }
+
+    .restaurant-item-display-section .restaurant-item-container .card-item-section {
+        /* max-width: 336px;
+        min-width: 295px; */
+        max-width: 370px;
+        min-width: 400px;
+
     }
 }
 

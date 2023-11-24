@@ -1,4 +1,9 @@
 /* Form Css Start  */
+
+.form-main-section .form-container {
+    height: 72vh;
+}
+
 .form-main-section .form-container .form-section {
     padding: 25px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -16,6 +21,7 @@
 .form-main-section .form-container .form-error {
     color: var(--primary-red);
 }
+
 
 
 @media screen and (max-width:414px) {
