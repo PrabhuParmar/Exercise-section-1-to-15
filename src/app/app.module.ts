@@ -13,6 +13,7 @@ import { RestaurantItemDisplayComponent } from './home/restaurant-item-display/r
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpecialItemDirective } from './directive/special-item.directive';
 import { IsEllipsisActiveDirectiveDirective } from './directive/is-ellipsis-active-directive.directive';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { IsEllipsisActiveDirectiveDirective } from './directive/is-ellipsis-acti
     RestaurantItemDisplayComponent,
     HeaderComponent,
     SpecialItemDirective,
-    IsEllipsisActiveDirectiveDirective
+    IsEllipsisActiveDirectiveDirective,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

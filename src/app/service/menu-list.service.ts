@@ -61,7 +61,6 @@ export class MenuListService {
           this.groupByCategory.splice(index, 1);
         };
       };
-
     });
     // menuList Data Remove and set updated Data in MenuListData
     const restaurantItemIndex = this.menuList.findIndex(object => {
